@@ -1,0 +1,30 @@
+
+#keycloack:
+#  resource: egamecommerce-angular
+#  realm: egamecommercerealm
+ # auth-server-url: http://localhost:8080/auth
+
+
+spring:
+
+    security:
+      oauth2:
+        resource-server:
+          jwt:
+            jwk-set-uri: http://localhost:8080/auth/realms/egamecommercerealm/protocol/openid-connect/certs
+            issuer-uri: http://localhost:8080/auth/realms/egamecommercerealm
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: Heis3n0.
+      url: jdbc:mysql://localhost:3306/egamecommercedb
+
+server:
+  port: 8070
+keycloak:
+  resource: egc-backend
+  realm: EGCRealm
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  use-resource-role-mappings: true
+  bearer-only: true
